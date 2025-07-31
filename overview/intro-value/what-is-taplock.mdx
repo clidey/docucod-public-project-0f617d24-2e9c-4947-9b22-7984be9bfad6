@@ -1,0 +1,91 @@
+---
+title: "What is TapLock?"
+description: "TapLock is an open-source Android widget that allows users to instantly lock their device with a double-tap. Its minimalist design focuses on single-handed efficiency and transparency, providing a secure alternative to typical proprietary apps."
+---
+
+# What is TapLock?
+
+## Unlocking One-Handed Efficiency with a Double Tap
+
+### A Minimalist Android Widget for Instant Screen Locking
+
+TapLock is an open-source Android widget designed to transform how you secure your device. Imagine wanting to lock your phone quickly—without fumbling for buttons or navigating through screens. TapLock empowers you to do exactly that with a simple double tap on a transparent widget placed anywhere on your home screen.
+
+Unlike bulky or intrusive apps, TapLock focuses on simplicity, speed, and privacy. It lets you lock your device instantly, all while staying out of your way visually and functionally.
+
+---
+
+## What Exactly Is TapLock?
+
+TapLock is a lightweight widget for Android that allows you to lock your screen by double-tapping the widget. It’s purpose-built for single-handed users who need fast, seamless security access without extra distractions.
+
+### Core Purpose
+
+- **Instant Screen Locking:** Lock your device screen immediately via double tap on the widget.
+- **Minimal Footprint:** The widget is invisible by default, ensuring zero interference with your home screen’s look.
+- **Privacy-Centric:** As an open-source project, it guarantees no hidden data collection or tracking.
+
+### Why It Matters
+
+Traditional screen-locking apps often require invasive permissions and run behind-the-scenes processes that users can’t inspect. TapLock solves this by providing a transparent, auditable solution that leverages Android’s Accessibility Service solely to perform the lock action — nothing else.
+
+This radically reduces security risks and builds trust by allowing any user or developer to verify how the app works.
+
+---
+
+## What Sets TapLock Apart?
+
+TapLock’s differentiation lies in its unwavering focus on trust, simplicity, and user experience:
+
+- **Open Source Transparency:** Every line of TapLock’s code is available for review. This means you verify exactly how it uses permissions and handles your data.
+- **Single-Purpose and Lightweight:** No unnecessary features or background tracking. TapLock exists purely to give you quick locking with minimal CPU, memory, or battery impact.
+- **Accessibility Service Usage Confined:** The only permission it asks for—the Accessibility Service—is used exclusively to trigger the lock screen when you double-tap the widget.
+- **Visual Transparency:** The widget can be resized and remains transparent, preserving your home screen aesthetic.
+
+These aspects create a security-first experience rarely found in typical proprietary screen-locking apps.
+
+---
+
+## How TapLock Works — A High-Level View
+
+TapLock combines Android’s widget system with the Accessibility Service to deliver instant device locking triggered by user interaction.
+
+1. **Widget Placement:** Users add the TapLock widget to their home screen. It’s visually minimal and can be positioned anywhere for ease of access.
+
+2. **Double-Tap Detection:** When you tap the widget twice within a customizable timeout period (default 300 milliseconds), the app’s widget provider detects this gesture.
+
+3. **Lock Trigger via Accessibility Service:** Upon confirming the double tap, TapLock commands the Accessibility Service to lock the device immediately.
+
+4. **Configuration UI:** The TapLock app lets you tweak the double-tap timeout to match your tapping speed for optimal usability without false triggers.
+
+---
+
+## Real-World Scenario
+
+Imagine you are commuting and holding your device in one hand. You need to quickly lock your screen to protect sensitive information before putting it away. Instead of stretching for the power button with your other hand, you simply double tap the discreet TapLock widget within thumb reach. Instantly, your screen locks — secure, quick, and effortless.
+
+---
+
+## Summary
+
+TapLock is more than just a lock widget; it’s a transparent, user-centric redesign of device security interaction — prioritizing efficiency, privacy, and trust. Whether you seek a lightweight utility or want confidence in the software locking your device, TapLock offers a verifiable solution driven by the user’s needs.
+
+---
+
+## Next Steps
+
+To get started, explore the [Installation Options](/getting-started/setup-and-installation/installation-options) and learn how to add the TapLock widget to your home screen. Then, customize its sensitivity in [Customizing TapLock](/getting-started/configuration-and-first-use/customizing-taplock) to fit your tapping style.
+
+For developers and technically curious users, refer to the [Core Features at a Glance](/overview/how-it-works-architecture/core-features-overview) page to dive deeper into how TapLock operates internally while staying true to its privacy-first mission.
+
+---
+
+## Learn More
+
+- [TapLock GitHub Repository](https://github.com/modelorona/TapLock) — Full source code and community contributions
+- [Accessibility Service Permission Explained](/guides/customization-best-practices/privacy-and-accessibility-practices) — Understanding the crucial permission TapLock uses
+
+
+
+
+

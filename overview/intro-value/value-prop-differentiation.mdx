@@ -1,0 +1,82 @@
+---
+title: "Value Proposition & Radical Transparency"
+description: "Discover why TapLock is uniquely trustworthy: fully open-source, no internet permissions, minimal codebase, and no personal data collection. This page explains why privacy-conscious users can rely on TapLock in a landscape crowded with opaque solutions."
+---
+
+# Value Proposition & Radical Transparency
+
+## Why Trust TapLock?
+
+In today’s mobile ecosystem, trust and privacy are paramount. TapLock addresses these concerns head-on by embracing radical transparency and a privacy-first approach. Unlike many screen-locking apps that operate as opaque, closed-source solutions using broad permissions, TapLock invites you to verify every aspect of its behavior yourself.
+
+## Core Privacy and Trust Features
+
+- **Fully Open-Source**: Every line of TapLock's source code is publicly available on [GitHub](https://github.com/modelorona/TapLock). This transparency empowers you and the community to audit, review, and contribute to its security and functionality.
+
+- **No Internet Permissions**: TapLock deliberately excludes any internet access permissions. It cannot send or receive data, eliminating a common vector for data leakage and tracking.
+
+- **Minimal Codebase**: With a focused and concise codebase, TapLock simplifies the review process, ensuring no hidden features or unwanted behaviors lurk beneath the surface.
+
+- **No Personal Data Collection**: TapLock’s sole use of the Accessibility Service is strictly to detect double taps and lock the screen. It does not collect or log any user data, interactions, or behavior.
+
+- **No Third-Party Analytics or Tracking**: To further secure your privacy, TapLock does not integrate any analytics services or trackers, ensuring your app usage remains private and confined to your device.
+
+## Why This Matters
+
+Many apps requiring the Accessibility Service have broad permissions that can access sensitive interactions or screen content. When these apps are closed-source, users must trust the developer without evidence. TapLock eliminates this guesswork by providing full source visibility and minimal permission use.
+
+This means:
+
+- You control your security and privacy — no hidden data collection.
+- You can verify TapLock’s behavior yourself or through independent audits.
+- The app design focuses solely on providing a quick, efficient double-tap lock function without unnecessary bloat.
+
+## Transparency in Action
+
+TapLock’s commitment goes beyond promises; it is implemented as follows:
+
+- The [AndroidManifest.xml](app/src/main/AndroidManifest.xml) shows only the essential Accessibility Service permission.
+- The app's [MainActivity](app/src/main/java/com/ah/taplock/MainActivity.kt) offers full control and clear information about permissions, configured entirely within the app with no telemetry.
+- The service implementation ([TapLockAccessibilityService.kt](app/src/main/java/com/ah/taplock/TapLockAccessibilityService.kt)) strictly uses system calls to lock the screen without special data access.
+
+This openness ensures that users never have to ‘trust blindly’ but can instead place confidence in verified facts.
+
+## Best Practices for Privacy-Conscious Users
+
+- **Review the source code** yourself or rely on community audits.
+- **Verify permissions** granted to the app in your device settings.
+- **Avoid apps that request excessive permissions without transparency.**
+- **Prefer minimal apps** that do one thing well — like TapLock.
+
+<Tip>
+TapLock intentionally excludes internet access and data collection capabilities — sharing none of your information externally. This design choice is rare for such apps and the foundation of its trustworthiness.
+</Tip>
+
+## Summary
+
+TapLock’s value proposition is crystal clear: provide a privacy-first, trustworthy, and verifiable tool to lock your Android device with a double tap. Its radical transparency model invites you to inspect, verify, and rest assured that your privacy is never compromised.
+
+You’re not just using TapLock — you’re holding it accountable.
+
+
+---
+
+## Related Resources
+
+- [What is TapLock?](../intro-value/what-is-taplock) — Understand the core purpose and functionality.
+- [Core Features at a Glance](../../how-it-works-architecture/core-features-overview) — See detailed capabilities.
+- [Installation and Setup Guide](../../../../getting-started/setup-and-installation/initial-setup-and-enabling-permissions) — Learn how to get TapLock up and running.
+
+---
+
+## Getting Started with TapLock’s Transparency
+
+1. Visit the [GitHub repository](https://github.com/modelorona/TapLock) to explore the full source code.
+2. Review permission usage outlined in the manifest ([AndroidManifest.xml](app/src/main/AndroidManifest.xml)).
+3. Confirm no internet permissions are requested in your device settings.
+4. Examine accessibility service implementation to understand how screen locking works with minimal scope.
+
+By taking these steps, you can confidently adopt TapLock as a reliable privacy-respecting tool.
+
+
+

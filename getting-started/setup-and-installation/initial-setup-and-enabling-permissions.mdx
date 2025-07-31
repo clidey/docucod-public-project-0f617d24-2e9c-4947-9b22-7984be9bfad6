@@ -1,0 +1,162 @@
+---
+title: "Initial Setup & Enabling Permissions"
+description: "Leads users through adding the TapLock widget to the home screen and enabling the Accessibility Service, highlighting why this permission is needed (and what it does NOT do). Ensures users unlock essential functionality with minimum friction."
+---
+
+# Initial Setup & Enabling Permissions
+
+This guide walks you through the critical first steps to unlock TapLock's core functionality. You will learn how to add the TapLock widget to your Android home screen and enable the essential Accessibility Service permission, which allows the app to respond to double taps and lock your screen instantly. We also explain why this permission is necessary and how TapLock respects your privacy.
+
+---
+
+## 1. Add the TapLock Widget to Your Home Screen
+
+The heart of TapLock’s functionality lies in its transparent, resizable widget that detects your double taps for instant screen locking. Here's how to add it:
+
+<Steps>
+<Step title="Activate Widget Placement Mode on Your Home Screen">
+Long-press on any empty space on your Android home screen until the customization options appear.
+</Step>
+<Step title="Open the Widgets Menu">
+Tap the 'Widgets' option that appears at the bottom or side of the screen.
+</Step>
+<Step title="Find the TapLock Widget">
+Scroll through the widgets list and locate the 'TapLock' widget.
+</Step>
+<Step title="Add the Widget to Your Home Screen">
+Drag and drop the TapLock widget to your preferred location on the home screen. You can resize it later to suit your needs.
+</Step>
+<Step title="Verify Widget Presence">
+Make sure the transparent widget is displayed on your home screen. It might look invisible due to its transparency but is fully functional.
+</Step>
+</Steps>
+
+<Tip>
+The TapLock widget is transparent by default to keep your home screen clean. You can resize it by long-pressing the widget after placement.
+</Tip>
+
+---
+
+## 2. Enable the Accessibility Service for TapLock
+
+TapLock requires enabling the Accessibility Service to detect double-tap gestures anywhere on your screen and perform the lock command. This is an Android system service that must be manually granted.
+
+<Steps>
+<Step title="Open the TapLock App">
+Launch the TapLock app from your app drawer or home screen.
+</Step>
+<Step title="Locate the Accessibility Permission Section">
+On the home screen of the app, find the section titled 'Required Permissions'.
+</Step>
+<Step title="Tap 'Enable' Button">
+Tap the button labeled 'Enable' next to 'Accessibility Service'. This triggers a dialog explaining why the permission is needed.
+</Step>
+<Step title="Review Accessibility Permission Dialog">
+Read the explanation carefully that TapLock needs accessibility permission solely to detect double taps and lock the screen.
+</Step>
+<Step title="Open Accessibility Settings">
+Tap 'Agree' on the dialog to open the Accessibility Settings screen of your device.
+</Step>
+<Step title="Locate TapLock Accessibility Service">
+Scroll through the list of Accessibility Services and find 'TapLock'.
+</Step>
+<Step title="Enable TapLock Accessibility Service">
+Toggle the switch to enable the TapLock Accessibility Service.
+</Step>
+<Step title="Confirm Any Prompts">
+If your device asks for confirmation, accept it to grant permission.
+</Step>
+<Step title="Return to TapLock App">
+Return to the TapLock app to verify the service is now enabled.
+</Step>
+</Steps>
+
+<Warning>
+Accessibility Service grants significant system privileges. TapLock uses it only for the explicit purpose of detecting double taps and locking the screen. It does not collect data or monitor your activity.
+</Warning>
+
+---
+
+## 3. Understand Why Accessibility Permission is Required
+
+The Accessibility Service enables apps to interact with the device on a system level, important for features like automated screen actions.
+
+- **Why TapLock needs it:**
+  - To detect double-tap gestures on the widget without interfering with other apps
+  - To programmatically lock the screen instantly upon gesture detection
+
+- **What TapLock does NOT do:**
+  - Does not monitor or collect your interactions with other apps
+  - Does not access or transmit your personal data
+  - Does not require internet permission or send information externally
+
+This transparency ensures you maintain control and privacy while enjoying convenient screen locking.
+
+---
+
+## 4. Verify Accessibility Service Status
+
+After enabling, you should see the Accessibility Service status update within the TapLock app.
+
+<Steps>
+<Step title="Open TapLock App">
+Navigate back to the main screen of TapLock.
+</Step>
+<Step title="Check Permission Status">
+Look at the 'Required Permissions' section. The button next to 'Accessibility Service' should now display 'Enabled' and be disabled to prevent redundant clicks.
+</Step>
+</Steps>
+
+<Check>
+If the button still shows 'Enable', confirm you have successfully toggled TapLock Accessibility Service in your device's system settings.
+</Check>
+
+---
+
+## 5. Next Steps: Start Using TapLock
+
+With the widget added and Accessibility Service enabled:
+
+- Double tap the transparent TapLock widget on your home screen to instantly lock your device.
+- Adjust the double-tap timeout setting within the app’s Settings for personalized responsiveness.
+
+Refer to [Customizing TapLock](/getting-started/configuration-and-first-use/customizing-taplock) for configuring your double tap timeout.
+
+Refer to [First Successful Run: Locking Your Screen](/getting-started/configuration-and-first-use/first-successful-run) to verify your setup.
+
+---
+
+## Troubleshooting Common Issues
+
+<AccordionGroup title="Troubleshooting Accessibility Service Setup">
+<Accordion title="Accessibility Service Doesn’t Appear in Settings">
+Ensure your Android version is 12 (API 31) or higher, as TapLock supports only API 31+.
+Restart your device if the service is not showing up.
+</Accordion>
+<Accordion title="TapLock Widget Not Detecting Double Tap">
+Verify Accessibility Service is enabled.
+Check if widget is properly placed and not overlapped by other widgets.
+Try adjusting the double tap timeout value within the app settings.
+</Accordion>
+<Accordion title="Permission Button Stays on 'Enable' After Enabling Service">
+Navigate back to TapLock app manually after enabling accessibility service to refresh status.
+Try restarting the app or device.
+Check for any device-specific restrictions on accessibility services.
+</Accordion>
+</AccordionGroup>
+
+<Info>
+For device-specific guidance on Accessibility Services, consult your device manufacturer’s documentation.
+</Info>
+
+---
+
+## Additional Resources
+
+- [TapLock GitHub Repository](https://github.com/modelorona/TapLock) – Review source code for transparency.
+- [Overview: What is TapLock?](/overview/intro-value/what-is-taplock) – Understand the product’s vision and purpose.
+- [Setup & Installation Prerequisites](/getting-started/setup-and-installation/prerequisites-and-system-requirements) – Confirm system compatibility before setup.
+
+---
+
+By following these simple, clear steps, you unlock TapLock’s powerful yet privacy-respecting screen locking capabilities with minimal friction. Your device is ready to be locked in a double tap—simple, fast, and secure.

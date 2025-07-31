@@ -1,0 +1,172 @@
+---
+title: "Installation Options"
+description: "Guides users through installing TapLock from trusted sources like Google Play or building from source for full transparency. Covers download steps, compatible platforms, and necessary development tools for those compiling locally."
+---
+
+# Installation Options for TapLock
+
+This page guides you through installing TapLock, your minimalist Android widget to lock your screen with a double tap. Whether you prefer the simplicity of downloading from the Google Play Store or want full transparency by building from source, this guide covers all installation options, platform compatibility, and the necessary tools for compiling locally.
+
+---
+
+## 1. Supported Platforms and Requirements
+
+TapLock is designed exclusively for Android devices meeting the following criteria:
+
+- **Minimum Android Version:** Android 12 (API level 31)
+- **Supported Architectures:** ARM and ARM64 devices compatible with Android 12+
+- **Storage Requirement:** Approximately 1MB of free space
+
+The app leverages Android's Accessibility Service permission to enable screen locking via a double tap. This permission is essential for the core functionality.
+
+<Check>
+Ensure your device runs Android 12 or higher before installation.
+</Check>
+
+---
+
+## 2. Installation via Google Play Store
+
+For most users, installing TapLock from the Play Store is the fastest and simplest way to get started.
+
+### Steps:
+
+1. Open the Google Play Store on your Android device.
+2. Search for "TapLock" or directly open the app via this link: [TapLock on Google Play](https://play.google.com/store/apps/details?id=com.ah.taplock).
+3. Tap **Install** and wait for the download and installation to complete.
+
+### Verifying Installation:
+
+- After installing, locate the TapLock app in your app drawer.
+- Open the app and verify it launches successfully.
+
+<Check>
+If the app fails to install, ensure your device meets the minimum Android 12 requirement and has sufficient storage.
+</Check>
+
+---
+
+## 3. Building and Installing from Source
+
+If you value radical transparency and want to inspect or modify TapLock's code before installing, you can build the app yourself.
+
+### Prerequisites
+
+- A development machine running Windows, macOS, or Linux
+- [Android Studio Hedgehog](https://developer.android.com/studio) or later installed
+- Git installed to clone the source repository
+
+### Downloading the Source
+
+1. Open a terminal or command prompt.
+2. Clone the TapLock repository with:
+
+```bash
+git clone https://github.com/modelorona/TapLock.git
+```
+
+3. Change directory into the project folder:
+
+```bash
+cd TapLock
+```
+
+### Opening the Project
+
+1. Launch Android Studio.
+2. Choose 'Open an Existing Project' and select the cloned `TapLock` directory.
+3. Allow Gradle to synchronize and download dependencies.
+
+### Build Configuration Details
+
+- The app targets Android SDK 34 and requires a minimum SDK 31.
+- Uses Kotlin 2.0.0 and Android Gradle Plugin 8.7.2.
+- Compose UI enabled for a modern interface.
+
+### Building the APK
+
+Run the following command in the project root within a terminal or use the Build menu in Android Studio:
+
+```bash
+./gradlew assembleDebug
+```
+
+This generates a debug APK located in `app/build/outputs/apk/debug/app-debug.apk`.
+
+### Installing the APK on Your Device
+
+Connect your Android device with USB debugging enabled, then install with:
+
+```bash
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+Alternatively, transfer the APK to your device and open it to install manually.
+
+<Warning>
+Ensure your device allows installation from unknown sources if installing manually.
+</Warning>
+
+---
+
+## 4. Verifying Your Installation
+
+After installation by any method:
+
+1. Launch the TapLock app.
+2. Confirm you see the home screen explaining the widget and permissions.
+3. Follow prompts to enable the Accessibility Service for TapLock as described in the app.
+
+<Info>
+Accessibility Service is required for TapLock to detect your double taps and lock the screen securely.
+</Info>
+
+---
+
+## 5. Troubleshooting Common Installation Issues
+
+<AccordionGroup title="Common Issues and Solutions">
+
+<Accordion title="App Not Installing or Crashing Immediately">
+- Double check Android version compatibility (minimum API 31).
+- Confirm sufficient free storage space.
+- Review device security settings blocking app installs.
+</Accordion>
+
+<Accordion title="Building Project Fails in Android Studio">
+- Verify Android Studio version is Hedgehog or later.
+- Confirm all dependencies downloaded correctly; try `File > Sync Project with Gradle Files`.
+- Check your Java version matches targetCompatibility 21.
+</Accordion>
+
+<Accordion title="APK Installation via ADB Fails">
+- Ensure USB debugging is enabled on your device.
+- Try uninstalling any existing TapLock app versions first.
+- Check if your device allows "Install via USB" (some require developer options).
+</Accordion>
+</AccordionGroup>
+
+---
+
+## 6. Next Steps
+
+Once installed and running, visit the [Initial Setup & Enabling Permissions](https://your.documentation.site/getting-started/setup-and-installation/initial-setup-and-enabling-permissions) page to enable required permissions and add the widget to your home screen.
+
+For advanced users, the [Customizing TapLock](https://your.documentation.site/getting-started/configuration-and-first-use/customizing-taplock) page offers insights into tailoring the double-tap timeout and widget appearance.
+
+---
+
+## Additional Resources
+
+- TapLock GitHub Repository: [https://github.com/modelorona/TapLock](https://github.com/modelorona/TapLock)
+- README for complete overview and quick start instructions.
+
+---
+
+<Tip>
+Building from source is the best way to verify that TapLock is exactly what it claims: a simple, privacy-focused, open-source screen locking tool.
+</Tip>
+
+---
+
+*End of Installation Options Guide.*

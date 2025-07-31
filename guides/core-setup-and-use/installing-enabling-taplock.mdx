@@ -1,0 +1,155 @@
+---
+title: "Installing and Enabling TapLock"
+description: "Learn how to install TapLock from the Play Store, add the widget to your home screen, and grant the required Accessibility Service permission with full transparency. This guide walks you through the essential first steps to ensure secure operation."
+---
+
+# Installing and Enabling TapLock
+
+Learn how to install TapLock from the Play Store, add its widget to your Android home screen, and enable the Accessibility Service permission required for secure screen locking. This guide ensures you get started with the app smoothly, maintaining full transparency on permissions and security.
+
+---
+
+## 1. Installation Overview
+
+TapLock provides a simple, privacy-focused way to lock your screen by double-tapping a transparent home screen widget. Installation involves:
+
+- Downloading the TapLock app
+- Adding the TapLock widget to your home screen
+- Granting Accessibility Service permission
+
+### Prerequisites
+- Android 12 (API 31) or higher
+- Stable internet connection for downloading (optional if building from source)
+- At least 1MB of free storage space
+
+### Expected Outcome
+Once completed, you will have a TapLock widget visible and ready to use, with permissions correctly granted to lock your screen with a double tap.
+
+---
+
+## 2. Step-by-Step Installation and Permission Enabling
+
+### Step 1: Download TapLock
+
+- Open Google Play Store on your Android device.
+- Search for "TapLock" by its developer or navigate via this link: [TapLock on Google Play](https://play.google.com/store/apps/details?id=com.ah.taplock).
+- Tap "Install" and wait for the download to complete.
+
+_Alternate: Build from source_
+
+Follow the instructions in the project README on GitHub for building from source if you prefer full transparency and control.
+
+### Step 2: Add the TapLock Widget to Your Home Screen
+
+1. Go to your device's home screen.
+2. Long-press an empty area until the customization options appear.
+3. Tap "Widgets".
+4. Scroll or search for "TapLock" in the widget list.
+5. Tap and hold the TapLock widget, then drag it to your preferred location on the home screen.
+6. Resize the widget if needed by long-pressing and adjusting edges.
+
+### Step 3: Enable Accessibility Service Permission
+
+TapLock requires Accessibility Service permission to detect double taps and lock the screen.
+
+1. Open the TapLock app.
+2. In the app, locate the "Required Permissions" section.
+3. If the "Enable" button is visible next to "Accessibility Service", tap it.
+4. A dialog will appear explaining why this permission is needed.
+5. Tap "Agree" to be directed to the Accessibility Settings screen.
+6. Find "TapLock Accessibility Service" in the list.
+7. Toggle it on.
+8. Confirm the permission prompt.
+9. Return to the TapLock app to verify the status label says "Enabled".
+
+### Step 4: Verify Configuration
+
+- The widget should respond to double taps by locking your device screen instantly.
+- In the app, you can adjust the double-tap timeout to optimize sensitivity.
+
+<Info>
+The Accessibility Service permission is used *only* for detecting double taps and locking your screen. TapLock does *not* monitor your app interactions, collect data, or transmit information.
+</Info>
+
+---
+
+## 3. Understanding Permissions and Transparency
+
+TapLock’s accessibility permission is essential for its core functionality:
+
+- **Why Accessibility Service?**
+  - It allows detecting the double-tap gesture on the widget.
+  - It lets the app trigger the device’s screen lock action programmatically.
+
+- **Privacy and Security:**
+  - TapLock is open source, so you can audit its code before and after enabling permissions.
+  - It does *not* require internet access or collect any user data.
+  - The permission is strictly scoped for screen locking purposes.
+
+<Check>
+Before granting permissions, review the source code at [TapLock GitHub Repository](https://github.com/modelorona/TapLock) to verify privacy claims.
+</Check>
+
+---
+
+## 4. Troubleshooting Common Issues
+
+### Accessibility Service Won't Enable
+- Ensure no system restrictions or third-party security apps block accessibility permissions.
+- Restart your device and try enabling the permission again.
+
+### Widget Does Not Respond to Double Tap
+- Confirm the Accessibility Service permission is enabled.
+- Verify that the widget is correctly added and not covered by other UI elements.
+- Adjust the double-tap timeout value in the app settings to improve detection sensitivity.
+
+### Unable to Find TapLock Widget
+- Confirm the app is installed successfully.
+- Restart the launcher or device to refresh widget lists.
+- Use your launcher's widget search feature.
+
+---
+
+## 5. Best Practices
+
+- Keep your double-tap timeout at a value that balances detection accuracy and accidental taps (default: 300 ms).
+- Position the transparent widget on a part of your screen where accidental taps are less likely.
+- Regularly update the app from Google Play for the latest features and security improvements.
+
+---
+
+## 6. What's Next?
+
+- Customize your TapLock experience by adjusting the double-tap timeout and resizing the widget on your home screen. See [Configuring Double-Tap Timeout](../customization-best-practices/configuring-double-tap-timeout) for detailed guidance.
+- Learn how to use the widget effectively in [Using the Double-Tap Lock Widget](../core-setup-and-use/using-double-tap-lock-widget).
+- If you encounter issues, check [Troubleshooting & FAQ](../../configuration-and-first-use/troubleshooting-and-faq) for solutions.
+
+----
+
+## Additional Resources
+
+- [TapLock GitHub Repository](https://github.com/modelorona/TapLock)
+- [TapLock README](https://github.com/modelorona/TapLock/blob/main/README.md)
+
+---
+
+## Appendix: Accessibility Service Permission Explanation
+
+By design, Android requires accessibility permissions for apps that want to perform actions like locking the screen indirectly. TapLock uses this permission responsibly and minimally:
+
+```kotlin
+fun isAccessibilityEnabled(context: Context): Boolean {
+    val enabledServices = Settings.Secure.getString(
+        context.contentResolver,
+        Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+    )
+    val serviceName = "${context.packageName}/${TapLockAccessibilityService::class.java.name}"
+    return enabledServices?.contains(serviceName) == true
+}
+```
+
+This checks whether TapLock's accessibility service is authorized, confirming readiness for screen locking.
+
+---
+
+By following this guide, you will successfully install TapLock, add its widget, and enable the required permissions securely with full confidence in your privacy and security.
