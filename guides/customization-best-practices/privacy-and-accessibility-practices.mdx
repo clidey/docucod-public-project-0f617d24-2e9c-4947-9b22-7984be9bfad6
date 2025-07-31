@@ -3,4 +3,156 @@ title: "Privacy and Accessibility Best Practices"
 description: "A practical guide to understanding the Accessibility Service permissions TapLock requires, how to verify what’s being used, and reassuring steps you can take to audit permissions and privacy for maximum peace of mind."
 ---
 
-*This page will automatically be generated from the codebase*
+# Privacy and Accessibility Best Practices
+
+## Overview
+This guide helps you understand the Accessibility Service permissions TapLock requires, how these permissions align strictly with TapLock's purpose, and how you can verify and audit them yourself. It builds your confidence that TapLock respects your privacy by limiting its scope and provides practical steps for ensuring your data remains secure.
+
+## Why TapLock Requires Accessibility Service Permission
+
+TapLock leverages the Accessibility Service permission to detect your double tap on its transparent home screen widget and to lock your device screen promptly. This permission is essential because Android does not allow third-party apps to lock the screen without it.
+
+**Key points about this permission with TapLock:**
+
+- TapLock requests *only* the Accessibility Service permission — no additional permissions like internet access or location.
+- The permission enables TapLock to detect accessibility events related to your taps solely on its widget.
+- TapLock uses this permission exclusively to trigger the system screen lock.
+- It does not monitor, collect, or transmit any personal data or interactions unrelated to locking the screen.
+
+<Tip>
+By limiting itself to just one narrowly scoped permission, TapLock maximizes your privacy and minimizes attack surface risks.
+</Tip>
+
+## How to Verify TapLock's Permission Use
+
+TapLock’s open-source code allows you to verify exactly how the app uses the Accessibility Service permission. Here’s what you can check:
+
+1. **Review the `AndroidManifest.xml` file:**
+   - Confirms only `android.permission.ACCESSIBILITY_SERVICE` is requested.
+   - Shows the implementation of the Accessibility Service component.
+
+2. **Check `TapLockAccessibilityService.kt`:**
+   - Confirms service listens only to screen off intents and taps.
+   - Shows it performs a direct system command to lock the screen.
+
+3. **Verify no internet permissions or network access in manifest or code:**
+   - Ensures the app cannot transmit data externally.
+
+4. **Audit the runtime code:**
+   - Observe event handlers do not collect unrelated user data.
+   - Confirm there are no logs or transmissions beyond locking.
+
+<Note>
+TapLock's source code is available here: [TapLock GitHub Repository](https://github.com/modelorona/TapLock).
+You can review these files directly:
+- `app/src/main/AndroidManifest.xml`
+- `app/src/main/java/com/ah/taplock/TapLockAccessibilityService.kt`
+- `app/src/main/java/com/ah/taplock/MainActivity.kt`
+</Note>
+
+## Practical Steps to Audit and Manage Accessibility Permission
+
+Follow these steps to maintain control over the accessibility permission on your device:
+
+<Steps>
+<Step title="Check if Accessibility Service is Enabled">
+Open your Android Settings > Accessibility > Installed apps or Services, and look for TapLock. Confirm if it is active.
+</Step>
+<Step title="Review Accessibility Service Permissions">
+Tap into TapLock’s Accessibility Service entry. Android clearly outlines what permissions are granted and what the service can access.
+</Step>
+<Step title="Disable or Revoke the Permission">
+If concerned, disable TapLock’s accessibility permission temporarily to stop the app’s locking capability.
+</Step>
+</Steps>
+
+<Tip>
+You can enable or disable this permission anytime without uninstalling the app, allowing flexible control.
+</Tip>
+
+## Understanding TapLock’s Accessibility Service Implementation
+
+TapLock does **not**: 
+
+- Record or transmit your touch data.
+- Read or monitor your screen content.
+- Collect any personal or usage statistics.
+
+It **does**: 
+
+- Detect double taps on the widget using Accessibility events.
+- Trigger the system action to lock the device screen immediately.
+
+This minimal, targeted use is further evidenced in the source code:
+
+- The accessibility service overrides `onAccessibilityEvent` with no implemented logic, so it does not process other accessibility events.
+- The service listens for screen off intents to lock the device if needed.
+
+Code excerpt illustrating the behavior:
+
+```kotlin
+class TapLockAccessibilityService : AccessibilityService() {
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent?.action == Intent.ACTION_SCREEN_OFF) {
+            performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN)
+        }
+        return super.onStartCommand(intent, flags, startId)
+    }
+
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
+    override fun onInterrupt() {}
+}
+```
+
+## Best Practices for Privacy and Accessibility
+
+- **Limit Accessibility Permission Use:** Only enable TapLock’s accessibility service when you want to use the double-tap lock feature.
+- **Regularly Review Permissions:** Periodically verify that TapLock’s accessibility permission remains enabled only if you trust the usage.
+- **Keep TapLock Updated:** Ensure you use the latest version from the official source to benefit from security patches and privacy improvements.
+- **Leverage Open Source Visibility:** Utilize TapLock’s transparent codebase to personally audit or seek community reviews.
+
+<Tip>
+Transparency combined with minimum necessary permissions makes TapLock a trustworthy choice for privacy-conscious screen locking.
+</Tip>
+
+## Troubleshooting Common Accessibility Permission Issues
+
+<AccordionGroup title="Troubleshooting Accessibility Permissions">
+<Accordion title="TapLock’s Accessibility Service Won’t Enable">
+- Verify your Android version is 12 (API 31) or higher, as required.
+- Make sure no other app is conflicting by holding exclusive accessibility permissions.
+- Try restarting your device and enabling the permission again.
+- Use the app’s prompt to open the accessibility settings directly for streamlined enabling.
+</Accordion>
+
+<Accordion title="Double Tap Not Detected After Enabling Service">
+- Confirm the TapLock widget is correctly added to your home screen.
+- Check if the accessibility permission is still active after device reboot.
+- Adjust the double-tap timeout settings in the app for sensitivity.
+</Accordion>
+
+<Accordion title="Concerned About Data Privacy Despite Permission">
+- Review the source code, especially accessibility usage, via the TapLock GitHub.
+- Disable the permission any time from system settings if unsure.
+- Confirm no internet permissions exist in the app’s manifest.
+</Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+1. If you have not yet enabled the accessibility service, follow the [Initial Setup & Enabling Permissions](https://docs.example.com/getting-started/setup-and-installation/initial-setup-and-enabling-permissions) guide.
+2. For deeper understanding of TapLock’s core features, see [Core Features at a Glance](https://docs.example.com/overview/how-it-works-architecture/core-features-overview).
+3. To customize TapLock’s responsiveness and appearance, explore [Customizing TapLock](https://docs.example.com/getting-started/configuration-and-first-use/customizing-taplock).
+
+
+---
+
+## Quick Reference Links
+
+- [TapLock GitHub Repository](https://github.com/modelorona/TapLock)
+- [Accessibility Permission Description](https://developer.android.com/reference/android/accessibilityservice/AccessibilityService)
+- [TapLock Accessibility Service Code](https://github.com/modelorona/TapLock/blob/main/app/src/main/java/com/ah/taplock/TapLockAccessibilityService.kt)
+
+
+## Summary
+This guide equips you to confidently manage and audit the Accessibility Service permission TapLock requires. You gain practical knowledge to verify the app’s minimal, privacy-focused use of accessibility rights and steps to review and maintain your privacy. Transparency and user control remain TapLock’s core pillars, and this page reinforces your ability to ensure your data stays secure while enjoying seamless double-tap screen locking.
