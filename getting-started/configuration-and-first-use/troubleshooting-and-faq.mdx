@@ -3,4 +3,159 @@ title: "Troubleshooting & FAQ"
 description: "Answers common setup questions—such as permission issues, widget behavior, and unlocking accessibility. Provides actionable steps for resolving typical problems so users can quickly move past hurdles and focus on using TapLock."
 ---
 
-*This page will automatically be generated from the codebase*
+# Troubleshooting & FAQ for TapLock
+
+This guide addresses common issues you might encounter while setting up and using TapLock, focusing on permissions, widget behavior, and accessibility service challenges. Follow the step-by-step solutions to quickly resolve problems and get back to enjoying the seamless double-tap screen lock experience.
+
+---
+
+## 1. Accessibility Service Not Enabling or Not Working
+
+The Accessibility Service is essential for TapLock to detect your double taps and lock the screen.
+
+### Symptoms
+- "Enable" button disabled or nothing happens when you try to enable the service.
+- Double tap does not lock the screen.
+
+### Solutions
+- **Manually Enable Accessibility Service:**
+  1. Open your device `Settings`.
+  2. Navigate to `Accessibility` > `Installed Services` or `TapLock`.
+  3. Find the TapLock Accessibility Service and enable it.
+  4. Confirm any permission prompts.
+
+- **Check if Accessibility Service is Running:**
+  - Open the TapLock app; it shows the service status.
+  - If disabled, try enabling manually.
+
+- **Restart Your Device:** Sometimes Android restricts service enabling until a reboot.
+
+- **Avoid Battery Optimizations:**
+  - TapLock’s service might be stopped by aggressive battery saving modes.
+  - Go to `Settings` > `Battery` > `Battery Optimization`.
+  - Exclude TapLock from optimization or background restrictions.
+
+<Tip>
+Ensure you only grant accessibility permission to trusted apps, as it allows interaction monitoring. TapLock uses it solely to lock your screen via double tap.
+</Tip>
+
+---
+
+## 2. Widget Not Appearing on Home Screen or Missing
+
+### Symptoms
+- After installing, you can’t find the TapLock widget.
+- Widget appears but is unresponsive.
+
+### Solutions
+- **Adding the Widget Properly:**
+  1. Long press on your home screen.
+  2. Tap on `Widgets`.
+  3. Scroll to find the “TapLock” widget.
+  4. Drag and drop it where you want.
+
+- **Launcher Compatibility:**
+  - Some custom launchers may not properly show widgets.
+  - Try switching temporarily to the default Android launcher.
+
+- **Widget Resizing and Visibility:**
+  - TapLock widget is transparent by default.
+  - Try resizing it larger to ensure proper touch recognition.
+
+- **Reinstall the App:**
+  - If widget still missing, uninstall and reinstall TapLock.
+
+---
+
+## 3. Double Tap Does Not Lock the Screen
+
+### Symptoms
+- Double tapping the widget seems to do nothing.
+
+### Solutions
+- **Verify Accessibility Service is Enabled:** The service must be active.
+- **Check Double-Tap Timeout:**
+  - Open TapLock app.
+  - Adjust the double tap timeout setting in the app (default is 300ms).
+  - A too-short or too-long timeout may cause missed detection.
+
+- **Use the Correct Widget:**
+  - Confirm you are tapping the TapLock widget, not an icon or shortcut.
+
+- **Screen Locking Not Supported on Device:**
+  - Some OEMs limit screen locking commands.
+  - TapLock uses Android’s `GLOBAL_ACTION_LOCK_SCREEN`; if your device blocks it, double tap won’t work.
+
+---
+
+## 4. TapLock App Crashes or Fails to Launch
+
+### Solutions
+- **Update to Latest Version:** Download the latest stable release from Play Store.
+- **Clear App Cache and Data:**
+  1. Go to `Settings` > `Apps` > `TapLock`.
+  2. Tap `Storage & Cache`.
+  3. Clear cache, then clear data.
+  4. Restart the app and reconfigure.
+- **Reinstall TapLock:**
+  - Uninstall and reinstall fresh.
+
+---
+
+## 5. FAQs
+
+### Why does TapLock need Accessibility Service permission?
+
+TapLock uses Accessibility Service solely to detect double taps and lock your screen. It doesn't access or collect any other data.
+
+### Is TapLock safe and private?
+
+Yes. TapLock is 100% open source, does not require internet permission, and does not collect data. You can audit the entire codebase yourself.
+
+### How do I adjust the sensitivity of the double tap?
+
+You can customize the double tap timeout in milliseconds inside the TapLock app's Settings screen.
+
+### I enabled accessibility but the widget still doesn’t work. What do I do?
+
+Try restarting your device, disable battery optimizations for TapLock, and confirm the widget is correctly added and resized.
+
+### Can I lock my screen without add TapLock widget?
+
+No. The widget is the visible trigger for the double tap gesture. The app requires it on your home screen.
+
+---
+
+## 6. Additional Troubleshooting Tips
+
+- Verify your Android version is 12 or above (API 31) as required.
+- Avoid task killer or aggressive background management apps that may stop TapLock’s accessibility service.
+- Consult the [Initial Setup & Enabling Permissions](getting-started/setup-and-installation/initial-setup-and-enabling-permissions) guide for detailed setup instructions.
+
+---
+
+## 7. Getting More Help
+
+If these steps do not resolve your issue, consider the following:
+
+- Browse community issues on the [TapLock GitHub repository](https://github.com/modelorona/TapLock/issues).
+- Review the [First Successful Run](getting-started/configuration-and-first-use/first-successful-run) guide to verify your setup.
+- Join discussions or raise a question in the repo for personalized help.
+
+
+---
+
+## References & Related Documentation
+
+- [Prerequisites & System Requirements](/getting-started/setup-and-installation/prerequisites-and-system-requirements)
+- [Initial Setup & Enabling Permissions](/getting-started/setup-and-installation/initial-setup-and-enabling-permissions)
+- [Customizing TapLock](/getting-started/configuration-and-first-use/customizing-taplock)
+- [First Successful Run: Locking Your Screen](/getting-started/configuration-and-first-use/first-successful-run)
+- [Core Features at a Glance](/overview/how-it-works-architecture/core-features-overview)
+
+
+---
+
+<Note>
+Keep your TapLock app updated to ensure access to the latest fixes and compatibility improvements.
+</Note>
