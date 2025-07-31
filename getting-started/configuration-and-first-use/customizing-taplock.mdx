@@ -3,4 +3,142 @@ title: "Customizing TapLock"
 description: "Explains available widget and app settings, including adjusting the double-tap timeout for responsiveness and changing widget size and transparency. Ensures your TapLock experience fits your style and workflow."
 ---
 
-*This page will automatically be generated from the codebase*
+# Customizing TapLock
+
+Make TapLock truly your own by tailoring key widget and app settings. This guide walks you through adjusting the double-tap timeout, resizing the widget, and modifying its transparency—ensuring the TapLock experience fits your style, workflow, and device setup effortlessly.
+
+---
+
+## 1. Understanding Customization Options
+
+TapLock provides essential settings that influence how quickly it responds to your double taps and how the widget appears on your home screen:
+
+- **Double-Tap Timeout:** Defines the maximum time (in milliseconds) allowed between two taps for the app to register it as a double tap. Adjusting this changes how sensitive TapLock is to your tapping speed.
+- **Widget Size & Transparency:** The home screen widget is inherently transparent and resizable, letting you place it discreetly or prominently where it suits your workflow.
+
+This section focuses on how to adjust these settings within the TapLock app and through your device interface.
+
+## 2. Adjusting the Double-Tap Timeout
+
+The double-tap timeout controls TapLock’s responsiveness. A shorter timeout requires faster taps; a longer timeout allows slower double taps. The default setting is 300 milliseconds.
+
+### How to Change the Timeout
+
+<Steps>
+<Step title="Open the TapLock App">
+Launch TapLock from your app drawer or home screen.
+</Step>
+<Step title="Locate the Settings Section">
+Scroll through the main screen until you find the Settings card labeled 'Settings'.
+</Step>
+<Step title="Adjust Timeout Value">
+- Tap the input field labeled 'Double Tap Timeout (ms)'.
+- Enter your preferred timeout in milliseconds (e.g., 250 for faster taps or 400 for slower taps).
+</Step>
+<Step title="Save the Setting">
+Tap the 'Update' button next to the input field. You’ll see a toast notification 'Timeout updated' confirming the change.
+</Step>
+<Step title="Test Your New Timeout">
+Return to your home screen and double-tap the TapLock widget to ensure it locks with your adjusted timing.
+</Step>
+</Steps>
+
+<Tip>
+If your double taps don’t trigger the screen lock consistently, try increasing the timeout value to give yourself a little more leeway between taps.
+</Tip>
+
+<Warning>
+Timeout values that are too high may cause false triggers. Choose a balanced value that matches your tapping speed.
+</Warning>
+
+## 3. Resizing and Adjusting Widget Transparency
+
+### Resizing the Widget
+
+Since TapLock is a home screen widget, its size is controlled by your Android launcher:
+
+1. **Long press the TapLock widget on your home screen.**
+2. When resize handles appear, drag them to increase or decrease the widget size.
+3. Release to save the new size.
+
+<Tip>
+Most modern launchers let you drag the edges for fine sizing. Experiment with sizing to find a balance between easy tap access and minimal screen space.
+</Tip>
+
+### Adjusting Transparency
+
+TapLock’s widget is designed by default to be mostly transparent, blending seamlessly with your home screen background. You cannot adjust transparency from the app, but resizing the widget effectively controls how much space the widget occupies visually.
+
+If you want a more discreet setup:
+- Make the widget very small.
+- Avoid placing near other tap-sensitive widgets to prevent accidental activations.
+
+## 4. Managing Accessibility Permission for Customization
+
+TapLock requires Accessibility Service permission to detect double taps and lock your screen. Without this permission, your custom settings won’t function correctly.
+
+### Enabling Accessibility Services
+
+If disabled, the TapLock app will prompt you to enable:
+
+1. Tap the **Enable** button in the "Required Permissions" section.
+2. You will be redirected to your device’s Accessibility Settings.
+3. Find and toggle "TapLock Accessibility Service" ON.
+
+If you don’t enable it, the widget will not respond to your double taps and your customization will have no effect.
+
+<Warning>
+TapLock uses Accessibility Service solely for locking the screen. It does not track your input or collect data.
+</Warning>
+
+## 5. Tips and Best Practices
+
+- **Test timeout adjustments gradually.** Start with small changes (e.g., 50ms increments) to find your sweet spot.
+- **Position the widget where one-handed taps feel natural.** Especially on larger screens, place TapLock near your thumb’s resting area.
+- **Avoid placing TapLock where accidental double taps are common,** such as near frequently used app icons.
+
+## 6. Troubleshooting Common Issues
+
+<AccordionGroup title="Troubleshooting TapLock Customization">
+<Accordion title="Timeout Update Not Saving">
+- Ensure you tapped the 'Update' button after entering the new timeout value.
+- Verify the value is a positive integer.
+- Restart the app if changes don’t apply immediately.
+</Accordion>
+<Accordion title="Double Tap Not Working After Timeout Change">
+- The new timeout could be too short or too long.
+- Try resetting to default (300ms) and adjust stepwise.
+- Confirm Accessibility Service is enabled.
+</Accordion>
+<Accordion title="Widget Resizing Not Applying">
+- Some launchers require a reboot or home screen refresh after resizing.
+- Try removing and re-adding the widget.
+- Ensure your launcher supports widget resizing.
+</Accordion>
+<Accordion title="Accessibility Permission Not Enabling">
+- TapLock will prompt with a dialog; if not, open device Settings > Accessibility and enable manually.
+- If the option is missing, check for device-specific restrictions or parental controls.
+</Accordion>
+</AccordionGroup>
+
+## 7. Summary
+
+By customizing TapLock’s double-tap timeout and widget sizing, you gain a seamless, speedy locking experience perfectly adapted to your device usage style. Remember to keep the Accessibility Service enabled to power these functionalities. Explore further customization in widget placement on your Android launcher for the best balance of convenience and discretion.
+
+---
+
+## Additional Resources
+
+- [First Successful Run: Locking Your Screen](/getting-started/configuration-and-first-use/first-successful-run) — Learn how to perform your first double tap lock.
+- [Troubleshooting & FAQ](/getting-started/configuration-and-first-use/troubleshooting-and-faq) — For more assistance.
+- [Configuring Double-Tap Timeout](/guides/customization-best-practices/configuring-double-tap-timeout) — Deep dive into timeout settings.
+- [Making the Widget Invisible and Resizing](/guides/customization-best-practices/making-the-widget-invisible-and-resizing) — More on widget appearance.
+
+<Tip>
+TapLock’s settings are designed to be lightweight and privacy-focused, avoiding unnecessary complexity — a hallmark of its minimal, transparent design philosophy.
+</Tip>
+
+---
+
+If you discover any issues or want to contribute improvements around customization, visit the project on <a href="https://github.com/modelorona/TapLock" target="_blank" rel="noopener noreferrer">GitHub</a>.
+
