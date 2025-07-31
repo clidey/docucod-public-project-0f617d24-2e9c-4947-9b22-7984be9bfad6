@@ -1,0 +1,94 @@
+{
+  "background": {
+    "decoration": "gradient"
+  },
+  "colors": {
+    "dark": "#1E3A8A",
+    "light": "#60A5FA",
+    "primary": "#60A5FA"
+  },
+  "favicon": "/favicon.svg",
+  "fonts": {
+    "family": "Montserrat",
+    "format": "woff2",
+    "source": "https://fonts.gstatic.com/s/googlesansflex/v5/t5sJIQcYNIWbFgDgAAzZ34auoVyXkJCOvp3SFWJbN5hF8Ju1x6sKCyp0l9sI40swNJwGpVd4AZzz0v6lJ4qFXNZhGjLvDSkV4USKMo6qQzwliVdHAy9jxTDHg_ugnAakpwGc-cxgUqDCIUI.woff2"
+  },
+  "icons": {
+    "library": "fontawesome"
+  },
+  "logo": {
+    "dark": "./logo/logo.svg",
+    "light": "./logo/logo.svg"
+  },
+  "name": "TapLock",
+  "navigation": {
+    "tabs": [
+      {
+        "groups": [
+          {
+            "group": "Product Introduction \u0026 Value",
+            "pages": [
+              "overview/intro-value/what-is-taplock",
+              "overview/intro-value/value-prop-differentiation",
+              "overview/intro-value/target-audience-use-cases"
+            ]
+          },
+          {
+            "group": "How TapLock Works",
+            "pages": [
+              "overview/how-it-works-architecture/core-features-overview",
+              "overview/how-it-works-architecture/architecture-system-diagram",
+              "overview/how-it-works-architecture/core-concepts-terminology"
+            ]
+          }
+        ],
+        "tab": "Overview"
+      },
+      {
+        "groups": [
+          {
+            "group": "Setup \u0026 Installation",
+            "pages": [
+              "getting-started/setup-and-installation/prerequisites-and-system-requirements",
+              "getting-started/setup-and-installation/installation-options",
+              "getting-started/setup-and-installation/initial-setup-and-enabling-permissions"
+            ]
+          },
+          {
+            "group": "Configuration \u0026 First Use",
+            "pages": [
+              "getting-started/configuration-and-first-use/customizing-taplock",
+              "getting-started/configuration-and-first-use/first-successful-run",
+              "getting-started/configuration-and-first-use/troubleshooting-and-faq"
+            ]
+          }
+        ],
+        "tab": "Getting Started"
+      },
+      {
+        "groups": [
+          {
+            "group": "Getting Started \u0026 Essential Workflows",
+            "pages": [
+              "guides/core-setup-and-use/installing-enabling-taplock",
+              "guides/core-setup-and-use/using-double-tap-lock-widget"
+            ]
+          },
+          {
+            "group": "Customization \u0026 Best Practices",
+            "pages": [
+              "guides/customization-best-practices/configuring-double-tap-timeout",
+              "guides/customization-best-practices/making-the-widget-invisible-and-resizing",
+              "guides/customization-best-practices/privacy-and-accessibility-practices"
+            ]
+          }
+        ],
+        "tab": "Guides"
+      }
+    ]
+  },
+  "styling": {
+    "codeblocks": "dark",
+    "eyebrows": "breadcrumbs"
+  }
+}
