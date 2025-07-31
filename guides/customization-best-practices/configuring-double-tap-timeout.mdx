@@ -3,4 +3,143 @@ title: "Configuring Double-Tap Timeout"
 description: "How to adjust the double-tap recognition time for the widget, suited for fast or slower users, and tips to prevent accidental locks. Includes instructions to access and modify this setting via the app's interface."
 ---
 
-*This page will automatically be generated from the codebase*
+# Configuring Double-Tap Timeout
+
+Unlock the full potential of TapLock by fine-tuning the double-tap timeout — the time window within which two taps on the widget must occur to trigger a lock. Whether you tap quickly or prefer a more deliberate gesture, adjusting this setting empowers you to personalize your screen locking experience, preventing accidental locks while ensuring responsiveness tailored to your pace.
+
+---
+
+## Workflow Overview
+
+### What You Will Achieve
+This guide walks you through **adjusting the double-tap recognition timeout** in TapLock’s settings. You'll learn how to set your preferred timeout in milliseconds, balancing speed and accuracy for your double-tap lock gesture.
+
+### Prerequisites
+- TapLock must be installed and successfully added as a widget on your Android home screen.
+- Accessibility Service permission for TapLock must be enabled to detect taps and lock the screen.
+- Familiarity with opening apps and using basic device settings.
+
+### Expected Outcome
+- You will confidently customize the double-tap timeout value.
+- The TapLock widget will recognize double taps within your specified timeout, optimizing your user experience based on your tapping speed.
+
+### Time Estimate
+Approximately 5 minutes.
+
+### Difficulty Level
+Beginner – no technical knowledge required.
+
+---
+
+## Step-by-Step Instructions
+
+<Steps>
+<Step title="Open the TapLock Application">
+Launch TapLock from your app drawer or home screen. This takes you to the main settings screen where personalization options are available.
+</Step>
+
+<Step title="Locate the Double Tap Timeout Setting">
+In the app, find the input labeled **'Double Tap Timeout (ms)'**. This field indicates the time interval TapLock listens for between two taps, with the default set at **300 ms**.
+</Step>
+
+<Step title="Enter Your Preferred Timeout">
+Tap the timeout input box and enter a value in milliseconds that matches your tapping speed:
+- Smaller values (e.g., 200–300 ms) suit fast tappers, making lock recognition more sensitive and immediate.
+- Larger values (e.g., 400–600 ms) accommodate slower taps, reducing missed double taps.
+
+Make sure to input only numeric values.
+</Step>
+
+<Step title="Save Your Timeout Setting">
+Tap the **Update** button next to the input field to save your new timeout.
+You will see a brief toast notification confirming that the timeout has been updated.
+</Step>
+
+<Step title="Test Your New Timeout">
+Go to your home screen and double-tap the TapLock widget to test if locking behavior matches your expectations.
+If you experience accidental locks or failures to lock, revisit the setting and try a different timeout value.
+</Step>
+
+<Step title="Adjust if Necessary">
+Repeat the adjustment and testing process until you find a timeout that feels natural and reliable to your tapping rhythm.
+</Step>
+</Steps>
+
+---
+
+## Practical Tips & Best Practices
+
+- Start with the default **300 ms** if unsure, then adjust up or down incrementally by 50 ms until comfortable.
+- Avoid setting a timeout too low (< 200 ms) unless you consistently tap very fast; this can cause missed double taps.
+- Setting a very high timeout (> 600 ms) might cause accidental locks by recognizing unrelated taps as double taps.
+- If you experience frequent accidental locks, slightly increase the timeout.
+- Use the update button promptly after entering a new value to ensure changes take effect.
+
+---
+
+## Common Pitfalls and How to Avoid Them
+
+<AccordionGroup title="Troubleshooting Timeout Settings">
+<Accordion title="Timeout Input Not Updating">
+If tapping **Update** yields no confirmation or change:
+- Ensure your input is numeric with no extra spaces or letters.
+- The app may require you to clear the field first before typing a new number.
+- Restart the app to refresh state if the issue persists.
+</Accordion>
+
+<Accordion title="Locking Does Not Trigger After Timeout Change">
+- Confirm that Accessibility Service permission remains enabled.
+- Check that the widget is correctly added to your home screen.
+- Try resetting to default timeout 300 ms and test again.
+- If problem continues, consult the Troubleshooting & FAQ guide.
+</Accordion>
+
+<Accordion title="Accidental Locks Happening Frequently">
+- The timeout value may be too high.
+- Decrease the timeout gradually to prevent recognizing unrelated taps as double taps.
+- Ensure the widget is placed somewhere unlikely to be tapped unintentionally.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Interface Walkthrough & Visual Guide
+
+TapLock's timeout configuration is part of its streamlined one-screen settings interface:
+
+- **Double Tap Timeout (ms) Input:** A numeric text field where you enter the timeout value.
+- **Update Button:** Saves the new timeout; disabled when input is empty.
+- **Toast Notification:** Confirms successful change.
+
+_Example UI snippet:_
+
+```text
++------------------------------------+
+| Settings                          |
+|                                  |
+| Double Tap Timeout (ms): [ 300 ] |  <-- Tap here and enter new value
+| [Update]                        |
++------------------------------------+
+```
+
+---
+
+## Next Steps & Related Documentation
+
+- After setting your preferred timeout, proceed to the [First Successful Run: Locking Your Screen](/getting-started/configuration-and-first-use/first-successful-run) guide to verify TapLock works as expected.
+- Explore [Making the Widget Invisible and Resizing](/guides/customization-best-practices/making-the-widget-invisible-and-resizing) to optimize widget appearance alongside your timeout configuration.
+- If you encounter issues, visit [Troubleshooting & FAQ](/getting-started/configuration-and-first-use/troubleshooting-and-faq) for solutions related to double-tap detection.
+- For detailed understanding of TapLock’s core features and how timeout impacts locking accuracy, review [Core Features at a Glance](/overview/how-it-works-architecture/core-features-overview).
+
+---
+
+## References
+
+- TapLock on GitHub: [https://github.com/modelorona/TapLock](https://github.com/modelorona/TapLock)
+- Accessibility Permission Explanation: see [Initial Setup & Enabling Permissions](/getting-started/setup-and-installation/initial-setup-and-enabling-permissions)
+
+---
+
+<Tip>
+Fine-tuning the double-tap timeout can dramatically improve your TapLock experience by adapting the lock gesture to your natural tapping speed. Take the time to experiment with different values for a perfect balance between responsiveness and accuracy.
+</Tip>
