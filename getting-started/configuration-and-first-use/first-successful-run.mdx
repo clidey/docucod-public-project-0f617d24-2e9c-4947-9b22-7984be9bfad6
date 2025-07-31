@@ -3,4 +3,163 @@ title: "First Successful Run: Locking Your Screen"
 description: "Walks users through a first end-to-end use—double tapping the widget to lock the screen—while highlighting privacy safeguards and what success looks like. Provides validation steps to confirm TapLock is working as intended."
 ---
 
-*This page will automatically be generated from the codebase*
+# First Successful Run: Locking Your Screen
+
+Unlock the full convenience and privacy of TapLock by performing your first double tap to lock your Android device’s screen. This guide walks you through an end-to-end run—from confirming setup, understanding what happens during double tap, to verifying TapLock’s privacy safeguards and expected outcomes.
+
+---
+
+## 1. Confirm Your Setup is Ready
+
+Before locking your screen with TapLock, ensure the foundational steps are in place:
+
+- **Widget Added**: A transparent TapLock widget must be placed on your Android home screen. If you haven’t done this yet:
+  1. Long-press an empty area on your home screen.
+  2. Select "Widgets".
+  3. Find and drag the "TapLock" widget to the desired spot.
+
+- **Accessibility Service Enabled**: TapLock relies on Accessibility Service permission to detect your double taps and lock the screen.
+  - On your device, open TapLock app.
+  - Locate the "Accessibility Service" section in Settings.
+  - If not enabled, tap "Enable" and follow the Android system prompts to turn on accessibility for TapLock.
+
+- **Double-Tap Timeout Configured (Optional)**: The timeout controls how quickly the two taps must occur. Default is 300 milliseconds.
+  - Open TapLock app.
+  - Adjust the double-tap timeout value to suit your tapping rhythm.
+  - Tap "Update" to save.
+
+<Tip>
+You can revisit the setup steps anytime in the [Initial Setup & Enabling Permissions](https://yourdocs.example.com/getting-started/setup-and-installation/initial-setup-and-enabling-permissions) guide for detailed instructions.
+</Tip>
+
+---
+
+## 2. Perform Your First Double Tap
+
+Follow these simple steps for your first lock:
+
+1. Ensure your device is unlocked and the home screen with the TapLock widget is visible.
+2. Quickly double tap on the transparent TapLock widget.
+
+**What happens behind the scenes:**
+- The widget detects your double tap within the configured timeout.
+- TapLock's Accessibility Service intercepts this gesture.
+- The device locks instantly using the system's screen lock action.
+
+<Check>
+You should see the device screen turn off and lock immediately without delays.
+</Check>
+
+---
+
+## 3. Understanding Privacy Safeguards During the Operation
+
+TapLock has been crafted with privacy-first principles:
+
+- **No data collection:** The Accessibility Service permission is used solely to detect the double tap and lock the screen; it does not monitor your activity or log any interaction.
+- **Open Source Transparency:** Every line of code is publicly available to reassure users of privacy.
+- **No network permissions:** The app cannot transmit any data.
+
+<Info>
+TapLock only listens for the double tap gesture on its own widget and performs the lock action. It does not access or send any other data.
+</Info>
+
+---
+
+## 4. Verify TapLock is Working Correctly
+
+To confirm TapLock is functioning optimally, use the following verification checklist:
+
+- **Screen Locks Instantly:** After double tapping the widget, the screen must go off and lock without error or delay.
+- **No Lock Without Double Tap:** The screen should not lock from accidental taps or other gestures.
+- **Accessibility Service Status:** Open the app and ensure the accessibility permission is enabled and active.
+
+If all these are true, you have successfully completed your first run.
+
+<Warning>
+If double tap does not lock the screen:
+- Verify accessibility service is enabled via system settings.
+- Check the widget is properly added and not covered by other UI elements.
+- Confirm the double-tap timeout is reasonable (e.g., 300ms).
+- Restart your device and try again.
+</Warning>
+
+---
+
+## 5. Next Steps: Enhancing Your TapLock Experience
+
+After successfully locking your screen the first time, consider exploring:
+
+- **Customize Double-Tap Timeout:** Adjust responsiveness in the app settings to best match your tapping speed.
+- **Resize or Move the Widget:** Tailor placement and size for ergonomic one-handed use.
+- **Explore Privacy Details:** Review the [Value Proposition & Radical Transparency](https://yourdocs.example.com/overview/intro-value/value-prop-differentiation) for deeper insight into TapLock's trust model.
+
+<Check>
+Common next tasks:
+- Visit [Customizing TapLock](https://yourdocs.example.com/getting-started/configuration-and-first-use/customizing-taplock) to fine-tune the app.
+- Read [Troubleshooting & FAQ](https://yourdocs.example.com/getting-started/configuration-and-first-use/troubleshooting-and-faq) if you encounter issues.
+</Check>
+
+---
+
+## 6. Troubleshooting Common Issues
+
+### Double Tap Not Detected
+- Ensure you are tapping the exact location of the TapLock widget.
+- Check no other apps or widgets obstruct touches over TapLock.
+- Try adjusting the double-tap timeout to a higher value.
+
+### Accessibility Service Disabled or Not Working
+- Go to Android system Settings > Accessibility > TapLock, and ensure the service is enabled.
+- Sometimes toggling it off and on again helps.
+
+### Screen Does Not Lock After Double Tap
+- Verify device lock settings and permissions allow screen locking.
+- Check battery optimization is not restricting TapLock.
+
+<Tip>
+Restarting your device often resolves permission or service glitches.
+</Tip>
+
+---
+
+## Summary
+
+By completing your first successful double-tap screen lock with TapLock, you have unlocked quick, privacy-conscious device locking with minimal permissions. This hands-on experience validates the setup and operation while reinforcing TapLock’s commitment to transparency and security.
+
+For additional assistance, dive into the related guides listed below.
+
+---
+
+## See Also
+
+- [Initial Setup & Enabling Permissions](https://yourdocs.example.com/getting-started/setup-and-installation/initial-setup-and-enabling-permissions)
+- [Customizing TapLock](https://yourdocs.example.com/getting-started/configuration-and-first-use/customizing-taplock)
+- [Troubleshooting & FAQ](https://yourdocs.example.com/getting-started/configuration-and-first-use/troubleshooting-and-faq)
+- [Value Proposition & Radical Transparency](https://yourdocs.example.com/overview/intro-value/value-prop-differentiation)
+- [System Architecture (with Diagram)](https://yourdocs.example.com/overview/how-it-works-architecture/architecture-system-diagram)
+
+---
+
+## Code Reference
+
+For users interested in the underlying code that enables this primary function, the Accessibility Service central to this flow is implemented here:
+
+```kotlin
+// app/src/main/java/com/ah/taplock/TapLockAccessibilityService.kt
+class TapLockAccessibilityService : AccessibilityService() {
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent?.action == Intent.ACTION_SCREEN_OFF) {
+            performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN)
+        }
+        return super.onStartCommand(intent, flags, startId)
+    }
+
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
+    override fun onInterrupt() {}
+}
+```
+
+This service listens for the screen-off intent triggered by your double tap and locks the device securely.
+
+<Source url="https://github.com/modelorona/TapLock" branch="main" paths={[{"path": "app/src/main/java/com/ah/taplock/TapLockAccessibilityService.kt", "range": "1-22"}]} />
