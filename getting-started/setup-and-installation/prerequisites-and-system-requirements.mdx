@@ -3,4 +3,138 @@ title: "Prerequisites & System Requirements"
 description: "Outlines the minimum Android version, free space, and permissions needed for TapLock. Clarifies why each requirement exists, focusing on app privacy and compatibility, so users can assess readiness before proceeding."
 ---
 
-*This page will automatically be generated from the codebase*
+# Prerequisites & System Requirements for TapLock
+
+Before installing and using TapLock, it’s critical to ensure your Android device meets the minimum requirements and permissions. This page explains the essential system requirements and permissions needed so you can confidently assess your device’s readiness and understand why each requirement matters—focusing on privacy, security, and compatibility.
+
+---
+
+## 1. Minimum Android Version
+
+- **Required:** Android 12 (API level 31) or higher
+
+### Why this matters:
+TapLock leverages Android Accessibility Services introduced and stabilized with Android 12 to securely detect double-tap gestures and lock the screen. Supporting API 31+ ensures you benefit from the latest security enhancements and consistent accessibility behavior.
+
+<Check>
+Ensure your device is running Android 12 (API 31) or newer to guarantee full TapLock functionality.
+</Check>
+
+---
+
+## 2. Available Storage Space
+
+- **Recommended Free Space:** At least 1MB
+
+### Why this matters:
+Although TapLock is a minimalist app with a very small footprint, android devices need free space to install and run apps smoothly, including for saving app settings and widget data.
+
+<Check>
+Verify you have at least 1MB of free internal storage before installation.
+</Check>
+
+---
+
+## 3. Required Permissions
+
+TapLock operates with minimal permissions to respect your privacy. Below is the key permission TapLock needs and why:
+
+### Accessibility Service Permission
+
+- **What it does:** Allows TapLock to monitor your double-tap gesture on the widget and perform the screen lock action.
+- **Privacy-focused usage:** TapLock uses this permission *exclusively* to detect double taps and lock your device’s screen.
+
+<Note>
+TapLock does NOT collect any personal information, view your screen contents, or track your interaction beyond what is necessary to lock the screen using this permission. The app is fully open-source, letting you verify these claims.
+</Note>
+
+### How TapLock requests this permission:
+- When you first add the TapLock widget, the app will prompt you to enable the Accessibility Service in your device’s settings.
+- The prompt explains exactly why this permission is needed and guides you to the correct settings page.
+
+<Warning>
+Refusing this permission will prevent TapLock from functioning, as it cannot detect the double-tap gesture or lock the screen.
+</Warning>
+
+---
+
+## 4. Additional Requirements & Considerations
+
+- **Network:** No internet or network connectivity is required for TapLock to operate, enhancing your privacy and offline usability.
+- **System Settings Access:** You must be able to access Accessibility Settings on your device to enable the required service.
+
+---
+
+## Practical Checklist Before Installation
+
+1. Confirm your device is running **Android 12 (API 31)** or above.
+2. Verify you have **at least 1MB free storage** space.
+3. Be prepared to **enable Accessibility Service permission** for TapLock.
+4. Ensure you have access to your device’s **Accessibility Settings** to activate the service.
+
+---
+
+## Why These Requirements Matter For You
+
+TapLock is designed for maximum privacy and minimal footprint.
+
+- By limiting support to Android 12+, the app relies on the most secure and stable accessibility APIs.
+- The minimal storage requirement reflects TapLock’s lightweight, focused design.
+- The singular permission request ensures you never share irrelevant personal information.
+- The open-source nature and transparency empower you to verify the app’s safe use of permissions.
+
+---
+
+## What’s Next?
+
+Once these prerequisites are confirmed, proceed to the [Installation Options](../installation-options) page to learn how to get TapLock installed and properly set up on your device.
+
+You can also explore [Initial Setup & Enabling Permissions](../initial-setup-and-enabling-permissions) to walk through activating the accessibility service safely and beginning to use TapLock.
+
+---
+
+<Tip>
+If you are uncertain about your device’s Android version or available storage, check your device’s _Settings > About phone_ and _Settings > Storage_ sections.
+</Tip>
+
+---
+
+## Troubleshooting Common Readiness Issues
+
+<AccordionGroup title="Troubleshooting Device Readiness">
+<Accordion title="My device is running Android 11 or lower">
+TapLock requires Android 12 or above. Unfortunately, devices with lower Android versions cannot run TapLock. Consider upgrading your device or OS if possible.
+</Accordion>
+
+<Accordion title="I don’t see the Accessibility Service setting on my device">
+Device manufacturers sometimes customize settings menus. Try searching for 'Accessibility' in your device’s Settings search bar. If missing entirely, TapLock won’t function properly.
+</Accordion>
+
+<Accordion title="I have very limited free storage space">
+Free up some space by uninstalling unused apps or removing unnecessary files. Even a small 1MB is required for TapLock to install and run smoothly.
+</Accordion>
+</AccordionGroup>
+
+---
+
+## Additional Resources
+
+- [TapLock GitHub Repository](https://github.com/modelorona/TapLock) — Review the source code and verify privacy.
+- [Core Features Overview](../../overview/how-it-works-architecture/core-features-overview) — Understand what TapLock can do once installed.
+- [Value Proposition & Radical Transparency](../../overview/intro-value/value-prop-differentiation) — Learn more about TapLock’s privacy-first mission.
+
+---
+
+_This page forms the foundation for a successful and secure TapLock experience by ensuring your device meets all necessary requirements._
+
+
+---
+
+### Source Files
+
+- Android minimum SDK: `app/build.gradle.kts` (minSdk = 31)
+- Accessibility permission declaration: `app/src/main/AndroidManifest.xml` (android.permission.ACCESSIBILITY_SERVICE)
+- Permissions and instructions UI: `app/src/main/java/com/ah/taplock/MainActivity.kt`
+
+
+
